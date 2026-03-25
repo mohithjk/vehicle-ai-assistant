@@ -2,20 +2,19 @@ import pandas as pd
 from sentence_transformers import SentenceTransformer
 import numpy as np
 
-# Load model
 model = SentenceTransformer('all-MiniLM-L6-v2')
 
-# Load dataset
+
 df = pd.read_csv("cars.csv")
 
-# Convert dataset to sentences
+
 data = []
 
 for _, row in df.iterrows():
     sentence = f"{row['name']} is a car with mileage of {row['mpg']} mpg, {row['cylinders']} cylinders engine, horsepower of {row['horsepower']}, weight {row['weight']} kg and was made in {row['model_year']}."
     data.append(sentence)
 
-# Create embeddings
+
 embeddings = model.encode(data)
 
 print("🚗 Car AI Assistant Ready (type 'exit' to quit)\n")
