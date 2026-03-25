@@ -3,3 +3,5 @@ sentence-transformers
 numpy
 scikit-learn
 torch 
+API_KEY=3133069d3283440caaaca3768228426b
+wikipedia
